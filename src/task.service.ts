@@ -37,11 +37,6 @@ export class TasksService {
    * @memberof TasksService
    */
   async handleTimeDiff() {
-    this.appSrv.main();
-    return
-
-
-
     const url = 'https://a.jd.com//ajax/queryServerData.html';
     const res = await axios.get<IJdServTimeRes>(url); // 获得的是时间戳
     const now = Date.now();

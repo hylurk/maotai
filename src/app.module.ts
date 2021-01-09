@@ -5,11 +5,9 @@ import { ScheduleModule } from '@nestjs/schedule';
 import { TasksService } from './task.service';
 import { LoginService } from './login.service';
 import { ProductService } from './product.service';
-import { SpiderService } from './spider.service'
-
 @Module({
   imports: [ScheduleModule.forRoot()],
   controllers: [AppController],
-  providers: [AppService, TasksService, LoginService, ProductService, SpiderService],
+  providers: [AppService, TasksService, LoginService, ProductService],
 })
 export class AppModule {}

@@ -1,7 +1,6 @@
 import { Injectable, Logger } from '@nestjs/common';
 import { LoginService } from './login.service';
 import { ProductService } from './product.service';
-import { SpiderService } from './spider.service';
 
 @Injectable()
 export class AppService {
@@ -9,7 +8,6 @@ export class AppService {
   constructor(
     private readonly loginService: LoginService,
     private readonly productService: ProductService,
-    private readonly spiderService: SpiderService
   ) {}
 
   /**
@@ -18,8 +16,6 @@ export class AppService {
    * @memberof AppService
    */
   async main() {
-    await this.spiderService.getSpider();
-    return
     await this.loginService.init();
     await this.productService.getProduct();
     const path = await this.productService.getSeckillUrl();
